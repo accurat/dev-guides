@@ -112,6 +112,11 @@ TODO (what components go into components, which into ui, the lib folder (!!!), t
 ## CSS
 TODO
 
+## Commit naming
+TODO
+- https://chris.beams.io/posts/git-commit/
+- emojis
+
 ## Workflow
 
 TODO: Detail this
