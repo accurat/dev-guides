@@ -44,6 +44,8 @@ GOOD: `const { dataset, color, asd } = this.props; const bar = asd.foo.bar; cons
   - Do not mix [Function Components]() with [Class Components]() in the same project. Use the one your project was started with.
     WHY? Codebase coherence.
   - Class components should have ALL their JSX contained in the `render()` method. No other method returning JSX (= render method) should exist, such as `renderSection()` or similar. If you spot one, that will be a code smell and you should suggest it to be refactored.
+  - Function components should use the named function style (`function App() {`) instead of the anonymous function style (`const App = () => {`).
+      WHY? Having a named function helps when debugging, especially with the React Devtools
       WHY? So that everyone knows where to look. If you feel the need for a render method, that should be a new component! (It also improves performance, because it has logic on whether to re-render itself)
   - Listeners props on new components should always be called with the `on`: onClick, onHover, onPress.
       WHY? Makes the code obvious.
