@@ -9,9 +9,9 @@ If any of the words in the index of [this handbook](https://www.freecodecamp.org
 For a quick reminder on some of the ES6 terminology, have a look at [http://es6-features.org/].
 
 ## JavaScript
- 
+
 ###### Names
-Be very careful when naming files, variables or functions: it's one of the most important things in software development. 
+Be very careful when naming files, variables or functions: it's one of the most important things in software development.
 
 ###### File Naming
 Name the file exactly as the main exported variable (the most important exported). Use CamelCase, avoid dash-casing. (open problem: "*-utils" files)
@@ -27,12 +27,12 @@ Name the file exactly as the main exported variable (the most important exported
   - Variables should NEVER be named `data`, please prefer `dataset` for collections and `datum` for a single row / element.
       WHY? The word `data` express no plurality or singularity, and gives absolutely no hints about the content. For example use: `productsDataset` `filteredTimelineDataset` and so on
       NB: This should ONLY be used for real data, as in Accurat's Data. Not for configuration objects or information, for which other names should be used.
-      
+
 ###### Modules
  - Keep your imports in order! A neat and tidy block of imports keeps the file ordered. (Alphabetical ordering is too much)
  - Do not ever `export default` (unless is somehow needed like in `pages` folder in Next.js) but ALWAYS export named function, const, class or component
      WHY? It helps naming coherence (you import the exact name of what you export and it increase readability), and it helps tree shaking.
-     
+
 ###### Other
  - When you access more nested properties, do it at once with [destructuring](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment) and never repeat it more times.
 BAD: `this.props.dataset[0]` and then `this.props.color` and then `this.props.asd.foo.bar`
@@ -45,13 +45,15 @@ GOOD: `const { dataset, color, asd } = this.props; const bar = asd.foo.bar; cons
     WHY? Codebase coherence.
   - Class components should have ALL their JSX contained in the `render()` method. No other method returning JSX (= render method) should exist, such as `renderSection()` or similar. If you spot one, that will be a code smell and you should suggest it to be refactored.
       WHY? So that everyone knows where to look. If you feel the need for a render method, that should be a new component! (It also improves performance, because it has logic on whether to re-render itself)
+  - Function components should use the named function style (`function App() {}`) instead of the anonymous function style (`const App = () => {}`).
+      WHY? Having a named function helps when debugging, especially with the React Devtools
   - Listeners props on new components should always be called with the `on`: onClick, onHover, onPress.
       WHY? Makes the code obvious.
   - If you create a function returning a function to be used as listener, please call it in a way that makes the reader understand it: `build*`, `make*`, `create*`. Example: `buildSelect = (family) => (event) => { select(family) }`
       WHY? To differentiate listeners from listeners builders, which return functions to be used as listeners.
   - Icon components should end with "*Icon", and similar.
       WHY? Think about the name in its context and scope: does it make sense to be called "Search", or should it be "SearchIcon"?
-  
+
 ## State:
   - The root MobX state should have no actions and no views, only properties containing other models.
       WHY? This separates concerns in an otherwise irreversible way. If you create an action in the global state, you will regret it. (I did! – @caesarsol)
@@ -74,7 +76,7 @@ GOOD: `const { dataset, color, asd } = this.props; const bar = asd.foo.bar; cons
       },
       ```
       WHY? It leads to less issues if you have multiple routes, for example a login page.
-  - In the models with some array data, avoid at all costs using `.find()` in the getters. Use indexed objects instead. Here is a simple example: 
+  - In the models with some array data, avoid at all costs using `.find()` in the getters. Use indexed objects instead. Here is a simple example:
       ```
       get datasetById() {
         return keyBy(self.dataset, 'id')
@@ -131,4 +133,3 @@ master as most updated branch
 tags for production deploys
 Push your branch ASAP, even if it's not ready for merge. Every end of the day for example.
 OSX: show dotfiles and hidden files command: defaults write com.apple.finder AppleShowAllFiles -bool true
-
