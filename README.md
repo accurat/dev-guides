@@ -121,18 +121,16 @@ TODO
 
 ## Workflow
 
-TODO: Detail this
-
-Prettier - editor config - format on save
-Eslint - editor config
-Editor - Ensure Newline at end of file / No trailing spaces everywhere (superseded by prettier)
-Git pull with rebase
-Git up snippet
-merge.conflictstyle diff3
-master as most updated branch
-tags for production deploys
-Push your branch ASAP, even if it's not ready for merge. Every end of the day for example.
-OSX: show dotfiles and hidden files command: defaults write com.apple.finder AppleShowAllFiles -bool true
+ - Prettier: config your editor to format on save
+ - Eslint: config your editor to show warnings and errors, and never ignore them!
+ - Editor: Ensure Newline at end of file
+ - Editor: Remove trailing spaces, everywhere
+ - Git: when merging, always create a merge commit (= don't use the fast-forward `ff`). [here](https://git-scm.com/docs/git-config#Documentation/git-config.txt-mergeff) is an useful config for that.
+ - Git: when pulling, always pull with rebase (`git pull --rebase`) and not with merge (the default). [here](https://git-scm.com/docs/git-config#Documentation/git-config.txt-branchautoSetupRebase) is an useful config for that.
+ - Git: configure your [`merge.conflictStyle`](https://git-scm.com/docs/git-config#Documentation/git-config.txt-mergeconflictStyle) as `diff3`
+ - `main` as most updated branch, for production systems use the branch `production` or deploy tags `production-2022-01-01-10-12-23`
+ - Push your branch ASAP, even if it's not ready for merge. Every end of day for example.
+ - OSX: show dotfiles and hidden files command: `defaults write com.apple.finder AppleShowAllFiles -bool true`
 
 ## Browser compatibility
 
