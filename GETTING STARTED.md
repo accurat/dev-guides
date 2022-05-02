@@ -24,7 +24,7 @@ Understand each one of these concepts, their meaning and purpose:
     - Default `const f = (x = 0, y = 1) => x * y`
     - Rest `const f = (...w) => w[0] * w[1]`
     - Spread `Math.max(...[1, 2, 3])`
-  - Template literals `\`Welcome, ${name}!\``
+  - Template literals `` `Welcome, ${name}!` ``
   - Destructuring Assignment: 
     - Arrays `const [a, b, c] = [1, 2, 3]`
     - Objects `const { a, b } = {a: 'ciao', b: 'pippo' }`
