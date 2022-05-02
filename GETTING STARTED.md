@@ -12,17 +12,33 @@ Theory:
     - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
     - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#instance_methods
   
-**EcmaScript 6, 7, 8 (= modern JavaScript)**
+**EcmaScript 6, 7, 8 (= "modern" features of JavaScript)**
 
 Understand each one of these concepts, their meaning and purpose:
-  - Variable Scoping ("var", "const", "let")
-  - Arrow Functions
-  - Extended Parameter Handling: Default, Rest, Spread
-  - Template literals
-  - Destructuring Assignment: Arrays, Objects, Function Parameters
-  - Spread operator: Arrays, Objects, Function Parameters
-  - Modules: import, export, default import, default export
-  - Classes (Object Oriented Programming features)
+  - Variable Scoping
+    - Function-scoped variables (old style) `var`
+    - Block-scoped variables `let`
+    - Block-scoped constants `const`
+  - Arrow Functions `const f = (x, y) => x * y`
+  - Extended Parameter Handling: 
+    - Default `const f = (x = 0, y = 1) => x * y`
+    - Rest `const f = (...w) => w[0] * w[1]`
+    - Spread `Math.max(...[1, 2, 3])`
+  - Template literals `\`Welcome, ${name}!\``
+  - Destructuring Assignment: 
+    - Arrays `const [a, b, c] = [1, 2, 3]`
+    - Objects `const { a, b } = {a: 'ciao', b: 'pippo' }`
+    - Function Parameters `const f = ({ a }, [b]) => a * b; f({ a: 2 }, [3])`
+  - Spread operator: 
+    - Arrays `const a = [b, ...c]`
+    - Objects `const a = { b, ...c }`
+    - Function Parameters `f(a, ...b)`
+  - Modules: 
+    - Named import `import { a } from "b"`
+    - Default import `import x from "y"`
+    - Named export `export const a = 5` / `const a = 5; export { a }`
+    - Default export `const x = 5; export default x`
+  - Classes / OOP features (Object Oriented Programming)
   - Promises and async/await
 
 Resources where to find these:
@@ -32,7 +48,7 @@ Resources where to find these:
 
 A lot of other advanced concepts are in ES6+, not important on a first instance, but interesting to go further.
 
-Note: ES6 is adding the most features, ES7 and ES8 (a.k.a. ES2018 and ES2019) are adding less but focused features.
+Note: ES6 is adding the most features, the subsequent updates (ES7, ES8, ES2020, ES2021, ES2022) are adding less but focused features.
     
 **React**
 
@@ -53,8 +69,11 @@ This is a quick collection of incremental steps to learn how to build a dataviz:
   - The Data Join: https://github.com/d3/d3-selection#selection_join
   - Interactions: https://github.com/d3/d3-selection#handling-events
   - Transitions: https://bost.ocks.org/mike/transition/
-  - D3 and React @ Accurat: article by Ilaria Venturini https://docs.google.com/document/d/1xGfHYnqVr8YRqgr0LLGfSutCvWVR9mOWIQ6epfdRDyA/edit
 
+**React with D3**
+
+  - D3 and React @ Accurat: article by Ilaria Venturini https://docs.google.com/document/d/1xGfHYnqVr8YRqgr0LLGfSutCvWVR9mOWIQ6epfdRDyA/edit
+  - React and D3, interactive guide by Amelia Wattenberger: https://wattenberger.com/blog/react-and-d3
 
 
 ## Mid / Senior Developers
