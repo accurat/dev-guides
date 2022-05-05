@@ -84,7 +84,11 @@ fetch('/name.txt')
 
 ### cosa sono le Callbacks
 
+TODO
+
 ### differenza Callback - Promise, conversione
+
+TODO
 
 ### `setTimeout` con Promise
 
@@ -115,7 +119,7 @@ function sendXHR(url, callback) {
   xhr.onload = () => callback(xhr.response)
 }
 
-const files = ['asd.txt', 'qwe.txt']
+const files = ['a.txt', 'b.txt']
 
 let responsesCount = 0
 const responses = []
@@ -150,14 +154,33 @@ Promise.all(
 
 ## async/await
 
+Questo costrutto ci da l'illusione di lavorare in modo sincrono, è infatti solo un **syntactic sugar** per rendere più facile l'uso di valori asincroni.
+
+Rifacciamo lo stesso esempio iniziale ma con `async`/`await`:
+
 ```js
-async function asd() {
-  const response = await fetch('/asd.txt')
-  console.log(response)
-  const text = await response.text()
-  await wait(1000)
-  return response.status + text
+function app(name) {
+  document.body.innerHTML = `Welcome, dear ${name}!`
 }
 
-asd().then(console.log)
+async function fetchEndpoint() {
+  const response = await fetch('/name.txt')
+  const text = await response.text()
+  return text
+}
+
+document.body.innerHTML = 'LOADING...'
+
+fetchEndpoint().then(app)
 ```
+
+Ricordarsi che dietro le quinte è sempre asincrono, e dietro le quinte viene usato `then`!
+
+## ESERCIZI
+
+1. fetch `1.txt` and use its content as URL to fetch the next endpoint (file `1.txt` has content `"2.txt"`, file `2.txt` has content `"surprise!"`)
+2. create an example using `Promise.race()` or `Promise.any()`
+3. try using promises in React to retrieve a dataset (call the endpoint in an `useEffect`, and save its output in an `useState`)
+4. fetch an array of 3 files, and output a single object with the file names as keys and the contents as values
+5. did you fetch the files sequentially or parallelly? try doing it in the other way! sequentially = using a chain of `then`, parallelly = using `Promise.all()`. what is the best method?
+6. re-do all excercises 1-5 using `async`/`await`
