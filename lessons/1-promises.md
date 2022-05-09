@@ -1,6 +1,14 @@
 # Promises
 
-Le promises sono ...
+Le promises sono la rappresentazione di un valore che non è ancora conosciuto in questo momento, ma lo sarà in un momento futuro.
+
+Quando infatti si fa su frontend una richiesta di un file mediante HTTP, o su backend la lettura di un file da hard-disk, il computer non sa bene quanto ci metterà ad ottenere quell'informazione, quindi anzichè ritornare il valore stesso (in questo esempio la stringa del contenuto del file) ritorna immediatamente una Promise del tale valore, che incapsula il fatto che quel valore esisterà in un momento successivo.
+
+Si può ad esempio avere una "promise di una stringa" (rappresentato di seguito come `Promise<number>`) o di un altro valore più complesso tipo `Object` o `Array`.
+
+Con una Promise non si può fare nulla se non dirle "tu dimmi cosa vuoi fare una volta che avrai quel valore, e io lo farò quando mi arriva".
+
+... TODO ...
 
 ## Esempio: richiesta a un endpoint
 
