@@ -28,13 +28,13 @@ To make it simple to commit only specific files (or single lines of code!), the 
 A commit always has: an author, the date and time, the content, and a **parent commit**.
 All these metadata can be cryptographically elaborated generating a **hash** that uniquely identifies the commit and certifies its content, author, date, time will never be changed.
 
-A main point with using GIT is that: 
+A main point with using GIT is that:
 - if anything was committed it can be recovered,
 - if something uncommitted is deleted from the working directory, it can be lost forever.
 
 ### New branch
 
-A *branch* is just a label – or pointer – that can be added to any *commit*. 
+A *branch* is just a label – or pointer – that can be added to any *commit*.
 
 Creating a branch means creating a new pointer to a specific commit.
 
@@ -59,7 +59,7 @@ This operation has the intention of downloading all the commits that are on *rem
 
 Note that it does not modify local branches, only remote branches, so it only changes branches named `origin/*` by updating them to what is on the remote.
 
-![fetch](https://user-images.githubusercontent.com/1799710/178040308-e838934f-18c5-4e9a-8d9d-ec24a770a85f.svg)
+![fetch](./images/git/fetch.svg)
 
 ### Pull
 
@@ -69,7 +69,7 @@ Note that it does modify the local branch you are into.
 
 Note that the *local branch* must be behind the *remote branch*. If it's not the case, the operation will give an error and you should probably proceed with a **pull with merge/rebase** (explained below).
 
-![pull](https://user-images.githubusercontent.com/1799710/178042792-03bca8b5-f03d-4461-ace6-a452a688e0ff.svg)
+![pull](./images/git/pull.svg)
 
 ### Push
 
@@ -77,7 +77,7 @@ This operation has the intention of uploading a specific *local branch* to updat
 
 Note that the *local branch* must be ahead of the *remote branch*. If it's not the case, the operation will give an error and you should probably proceed with a **pull with merge/rebase** (explained below) and then a *push*.
 
-![push](https://user-images.githubusercontent.com/1799710/178043033-f820d740-be35-4a61-a9e9-81c7bc820ab6.svg)
+![push](./images/git/push.svg)
 
 ### Basic workflow
 
@@ -111,7 +111,7 @@ Note that one branch is updated to the *merge commit* (`abc`), the other (`efg`)
 
 This operation in Accurat is usually done through a **PR**, but sometimes a manual merge is quicker and more flexible.
 
-![merge](https://user-images.githubusercontent.com/1799710/178043392-361c4127-077f-4229-95a7-4a3c78e20f6d.svg)
+![merge](./images/git/merge.svg)
 
 ### Pull with merge
 
@@ -123,7 +123,7 @@ One possible solution is to **pull with merge** (which is actually the default c
 
 NB: This operation is discouraged in Accurat, because it's usually done more cleanly by using a **pull with rebase** (explained below).
 
-![pull with merge](https://user-images.githubusercontent.com/1799710/178043480-292f608f-9d72-4755-989f-3a14221ea260.svg)
+![pull with merge](./images/git/pull_with_merge.svg)
 
 ### Merge with fast-forward
 
@@ -133,7 +133,7 @@ When merging a PR, for example in the GitHub interface, the default operation is
 
 NB: This operation is discouraged in Accurat, because of the described disadvantage. When doing a manual merge, git defaults to a fast-forward merge, and this is why we usually change that default.
 
-![merge fast-forward](https://user-images.githubusercontent.com/1799710/178043315-eafce4b6-7426-4150-a2ed-42fbcaba54e6.svg)
+![merge fast-forward](./images/git/merge_fast-forward.svg)
 
 ### Delete
 
@@ -150,22 +150,24 @@ Deleting a *remote branch* that has not been merged is safe **only if** we keep 
 
 ## Advanced operations
 
-Sometimes we want to keep the history clean, or clean it after the mess has been done. 
+Sometimes we want to keep the history clean, or clean it after the mess has been done.
 
 To do that we need to sacrifice something, our mental sanity, or take some of that responsibility that Uncle Ben is talking about.
 
 Please use these if you are sure of what you are doing!
 
-### Push forced
+### Push force
 
 This operation deletes the *remote branch* and recreates it on the current *local branch*.
 
-It's useful when a branch history was forked (as described in *pull with merge/rebase*) but we are really very absolutely sure that our current *local branch* is the one we want the *remote branch* to reflect. 
+It's useful when a branch history was forked (as described in *pull with merge/rebase*) but we are really very absolutely sure that our current *local branch* is the one we want the *remote branch* to reflect.
 This is for example the case after a *rebase*, explained below.
+
+![push force](./images/git/push_force.svg)
 
 ### Rebase
 
-This operation has the intention of "moving" a branch on top of another one. 
+This operation has the intention of "moving" a branch on top of another one.
 
 It can be useful to clean up the history or to fix conflicts before a PR merge can be done. It's not however mandatory, so don't feel compelled to use it if you're not comfortable.
 
@@ -173,7 +175,7 @@ NB: After a *rebase*, usually the following operation is a *push forced*. Don't 
 
 WARN: This operation is actually rewriting history by re-committing every commit!
 
-![rebase](https://user-images.githubusercontent.com/1799710/178043559-31f6b2d5-2965-4086-a370-58e8aad24104.svg)
+![rebase](./images/git/rebase.svg)
 
 ### Pull with rebase
 
@@ -181,7 +183,7 @@ This has the same result of a **pull with merge**, but avoids creating useless c
 
 WARN: There is a risk involved because a *rebase* is rewriting history and we could potentially lose some work, but it's usually safe if we know what we're doing.
 
-![pull with rebase](https://user-images.githubusercontent.com/1799710/178043490-19ede771-dcbc-4b0a-aecf-1a668e1aa584.svg)
+![pull with rebase](./images/git/pull_with_rebase.svg)
 
 ### Reset a branch
 
