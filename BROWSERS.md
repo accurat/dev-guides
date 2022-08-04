@@ -42,23 +42,27 @@ The `alignment-baseline` attribute specifies the dominant baseline, which is the
 
 If you need to support also IE, then use `dy` instead of `dominant-baseline`.
 
-## `foregnObject`
+## `<foregnObject>`
 
-- In Safari, nei div dentro a un `foregnObject` sembra che se si applica un'opacità essi vengono spostati a `x=0` (???)
+This SVG element should enable writing an HTML snippet inside an SVG. It gives all sorts of problems, so it's better NOT to use it at all. A similar result is obtainable with an absolute div over the SVG, where HTML elements can be absolutely positioned with the same or similar coordinates.
 
-  _soluzione/workaround_: usare colore anzichè opacità
+Following is a list of problems you'll find if absolutely have to use it:
 
-- In Safari, in un `foreignObject` qualunque elemento con `position: absolute` dà problemi, trattando come origine non quella del `foreignObject` ma quella dell'elemento SVG.
+- In Safari, inside of a `foregnObject` the elements with an opacitywill be moved at `x=0`.
+    SOLUTION: use a computed color to obtain the same effect without opacity.
 
-  _soluzione/workaround_: inserire nel `foreignObject` un div in position fixed, allineare il `foreignObject` alla `y=0` e muoverlo verticalmente con un translate
+- In Safari, inside of a `foreignObject` any element with `position: absolute` gives problems, using as origin not the `foreignObject` one but the one of the SVG element.
+    SOLUTION: insert in the `foreignObject` a div with `position: fixed`, align the `foreignObject` to `y=0` and move it vertically with a `transform="translate()"`.
 
-- In Safari, in un `foreignObject` dentro a un `<g>` che abbia un `translate`, la `x` non viene applicata.
-
-  _soluzione/workaround_: inserire nel `foreignObject` un `div` in position `fixed`
+- In Safari, a `foreignObject` within a `<g>` with a `transform="translate()"`, the `x` translation is not applied.
+    SOLUTION: insert in the `foreignObject` a `div` with `position: fixed`.
 
 ## `transform`
 
-Piccola incoerenza che i browser trattano diversamente (Firefox e Chrome tolleranti, Safari più strict):
-- in SVG si fa: `<g transform="translate(10, 10)">` mentre in HTML: `<div style="transform: translate(10px, 10px)">`
-- in SVG si fa: `.attr('transform', 'translate(10, 10)')` mentre in HTML: `.style('transform', 'translate(10px, 10px)')`
-NOTA BENE: un `<svg>` è un elemento HTML, non SVG
+Small incoherency that browsers treat differently (Firefox and Chrome are more tolerant, Safari is stricter and errors out):
+- SVG: `<g transform="translate(10, 10)">` (`transform` is an attribute; no unit of measure)
+- HTML: `<div style="transform: translate(10px, 10px)">` (`transform` is a style; unit of measure is mandatory!)
+- SVG with d3: `.attr('transform', 'translate(10, 10)')`
+- HTML with d3: `.style('transform', 'translate(10px, 10px)')`
+
+NB: an `<svg>` is an HTML element! (and it can also be used as an SVG element, but it's a different story)
