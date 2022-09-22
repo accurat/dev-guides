@@ -42,7 +42,7 @@ Understand each one of these concepts, their meaning and purpose:
   - Promises and async/await
 
 Resources where to find these:
-  - ES6 Interactive Guide: http://stack.formidable.com/es6-interactive-guide/ (the site is down at the moment...)
+  - ES6 Interactive Guide: https://es6-interactive-guide.netlify.app/
   - ES6 Features (examples): http://es6-features.org/
   - Exploring ES6 (very detailed book, to be used for specific doubts): https://exploringjs.com/es6/
 
