@@ -7,7 +7,9 @@ This collection of resources is meant as a starter, to get familiar with concept
 **JavaScript**
 
 Theory:
-  - This list of concepts is a fundamental basis for any JS development (the last chapter, "Closures", is a bit more complex and can be clarified later): https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript
+  - This list of concepts is a fundamental basis for any JS development:
+    - https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript
+    - Any concept that remains uncertain should be researched in more detail in the same website.
   - Everything about Array and its prototype methods, very important:
     - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
     - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#instance_methods
