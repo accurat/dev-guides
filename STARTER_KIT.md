@@ -58,11 +58,9 @@ By using ```Object.assign()```, we can create a function that does not mutate th
 _[The Object.assign() method copies all enumerable own properties from one or more source objects to a target object. It returns the modified target object.]_
 ```js
 const updateLocation = (data, newLocation) => {
-    return 
-      Object.assign({}, data, {
-        location: newLocation
-    )
-  }
+  return Object.assign({}, data, {
+    location: newLocation
+  })
 }
 ```
 _[Object.assign ha sempre bisogno del primo parametro, che sarà il nuovo oggetto risultante, mentre tutti gli altri parametri vengono usati in ordine (da sx a dx) per riempire il primo oggetto. In questo caso la chiave location è già presente in data quindi verrà sovrascritta da location: newLocation.]_
@@ -74,11 +72,11 @@ const updateLocation = (data, newLocation) => {
   }
 }
 ```
-_[Qui invece stiamo ritornando un oggetto, in cui inseriamo le coppie chiave-valore presenti in data (grazie allo spread operator), e sovrascriviamo location. Le graffe dopo il return sono quelle dell’oggetto risultante.]_
 
 ## Variable scoping (var, let, const)
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript#variables
 
+_[Qui invece stiamo ritornando un oggetto, in cui inseriamo le coppie chiave-valore presenti in data (grazie allo spread operator), e sovrascriviamo location. Le graffe dopo il return sono quelle dell’oggetto risultante.]_
 An important difference between JavaScript and other languages like Java is that in JavaScript, **blocks do not have scope; only functions have a scope**. So if a variable is defined using var in a compound statement (for example inside an if control structure), it will be visible to the entire function. However, starting with ECMAScript 2015, let and const declarations allow you to create block-scoped variables.
 
 ## Arrow functions
