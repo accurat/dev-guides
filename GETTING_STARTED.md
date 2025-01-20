@@ -73,14 +73,13 @@ This is a quick collection of incremental steps to learn how to build a dataviz:
   - https://bost.ocks.org/mike/bar/ (basic HTML, automatic DOM generated HTML)
   - https://bost.ocks.org/mike/bar/2/ (basic SVG, importing CSV, generated SVG)
   - https://bost.ocks.org/mike/bar/3/ (Ordinal scales, Axes, Margins)
-  - The Data Join: https://github.com/d3/d3-selection#selection_join
-  - Interactions: https://github.com/d3/d3-selection#handling-events
-  - Transitions: https://bost.ocks.org/mike/transition/
+  - The Data Join: https://d3js.org/d3-selection/joining
+  - Interactions: https://d3js.org/d3-selection/events
+  - Transitions: https://d3js.org/d3-transition
 
 **React with D3**
 
   - D3 and React @ Accurat: article by Ilaria Venturini https://docs.google.com/document/d/1xGfHYnqVr8YRqgr0LLGfSutCvWVR9mOWIQ6epfdRDyA/edit
-  - React and D3, interactive guide by Amelia Wattenberger: https://wattenberger.com/blog/react-and-d3
 
 
 ## Mid / Senior Developers
