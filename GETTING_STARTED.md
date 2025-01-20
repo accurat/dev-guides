@@ -86,10 +86,6 @@ This is a quick collection of incremental steps to learn how to build a dataviz:
 
 ### Frontend
 
-**Accurat Styleguide**
-
-  - Beta version: https://docs.google.com/document/d/183C-72hu8hVUBzpLn0UwhmTFWFG_T6WbCWTZ9L5qdsY/edit?ts=5caf5d4b&pli=1
-
 **Advanced JS concepts**
 
   - All of the aforementioned topics described as advanced (obviously)
