@@ -54,13 +54,18 @@ Note: ES6 is adding the most features, the subsequent updates (ES7, ES8, ES2020,
     
 **React**
 
-Theory: https://reactjs.org/docs/hello-world.html
-  - As a starter, get familiar with chapters 1, 2, 3, 4
-  - About the state and lifecycle, instead of chapter 5 start with:
-    - https://reactjs.org/docs/hooks-state.html
-    - https://reactjs.org/docs/hooks-effect.html
-  - Very important, to understand React's "philosophy": chapter 12 "Thinking in React"
-  - When everything is very clear, start chapters 6, 7, 8, 9, 10, 11
+Guide: https://react.dev/ 
+  - Read these pages in this order:
+    - Hello World: https://react.dev/learn
+    - JSX Syntax 1: https://react.dev/learn/writing-markup-with-jsx
+    - JSX Syntax 2: https://react.dev/learn/javascript-in-jsx-with-curly-braces
+    - Components: https://react.dev/learn/your-first-component
+    - Props: https://react.dev/learn/passing-props-to-a-component
+    - State 1 (useState): https://react.dev/learn/state-a-components-memory
+    - State 2 (Advanced, all sub-chapters): https://react.dev/learn/managing-state
+    - Lifecycle (useEffect): https://react.dev/learn/synchronizing-with-effects
+  - Very important, to understand React's "philosophy": https://react.dev/learn/thinking-in-react
+  - When all the theory is very clear, start with the tutorial for a simple project: https://react.dev/learn/tutorial-tic-tac-toe
 
 **D3**
 
